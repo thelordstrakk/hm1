@@ -7,17 +7,50 @@
 //
 
 import UIKit
+import CoreLocation
 
+struct _G {
+    static var ok = "hi"
+    static var delegate: AppDelegate?
+    
+}
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
 
+    let locationManager = CLLocationManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        _G.delegate = self
         return true
+    }
+    
+    func startCheckingLocation() {
+        guard CLLocationManager.locationServicesEnabled() else {
+            print("Please enabled location services.")
+            return
+        }
+        
+        let authStatus = CLLocationManager.authorizationStatus()
+        if (authStatus == .authorizedAlways) {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+        } else {
+            
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let newLocation = locations.last!
+        print(newLocation)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
