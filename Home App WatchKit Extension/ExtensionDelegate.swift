@@ -7,15 +7,58 @@
 //
 
 import WatchKit
+import CoreLocation
 
-class ExtensionDelegate: NSObject, WKExtensionDelegate {
+struct _G {
+    static var delegate: ExtensionDelegate?
+    static var locationManager: CLLocationManager?
+    
+}
+
+class ExtensionDelegate: NSObject, WKExtensionDelegate, CLLocationManagerDelegate {
+    
+    //let locationManager = _G.locationManager
 
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
+        //self.startCheckingLocation()
+        //let self.locationManager = _G.manager
+        _G.delegate = self
+        DispatchQueue.main.async {
+            _G.locationManager = CLLocationManager()
+            self.startCheckingLocation()
+        }
+        
     }
-
+    
+    func startCheckingLocation() {
+        guard CLLocationManager.locationServicesEnabled() else {
+            print("Please enabled location services.")
+            return
+        }
+        
+        let authStatus = CLLocationManager.authorizationStatus()
+        if (authStatus == .authorizedAlways) {
+            _G.locationManager?.delegate = self
+            _G.locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+            _G.locationManager?.startUpdatingLocation()
+            _G.locationManager?.allowsBackgroundLocationUpdates = true
+        } else {
+            
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let newLocation = locations.last!
+        print(newLocation)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
     func applicationDidBecomeActive() {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        //self.startCheckingLocation()
     }
 
     func applicationWillResignActive() {
@@ -25,6 +68,9 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
         // Sent when the system needs to launch the application in the background to process tasks. Tasks arrive in a set, so loop through and process each one.
+        if (1 == 1) {
+            //return
+        }
         for task in backgroundTasks {
             // Use a switch statement to check the task type
             switch task {

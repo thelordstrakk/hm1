@@ -52,5 +52,13 @@
 	</array>
 	<key>WKExtensionDelegateClassName</key>
 	<string>$(PRODUCT_MODULE_NAME).ExtensionDelegate</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Yeah 1</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Yeah 2</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Yeah 3</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Yeah 4</string>
 </dict>
 </plist>
