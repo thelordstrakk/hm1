@@ -11,6 +11,11 @@ import Foundation
 import UIKit
 
 class ProximityInterfaceController: WKInterfaceController {
+    
+    @IBOutlet var LatitudeLabel: WKInterfaceLabel!
+    @IBOutlet var LongitudeLabel: WKInterfaceLabel!
+    
+    //let ok = Trigger()
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
