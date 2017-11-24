@@ -32,6 +32,24 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, CLLocationManagerDelegat
             self.startCheckingLocation()
         }
         
+        let ok = Trigger()
+        
+        func callb(data: [AnyHashable: AnyHashable]) -> Void {
+            
+        }
+        ok.on(name: "Test1", callback: callb)
+        ok.on(name: "Test1", callback: { data in
+            let data = data as! [String: Any]
+            print("OK ITS TEST 1")
+            print(data["ye"] as Any)
+        })
+        ok.on(name: "Test2", callback: { data in
+            let data = data as! [String: Any]
+            print("YES ITS TEST 2")
+            print(data["ye"] as Any)
+        })
+        ok.invoke(name: "Test1", data: ["ye": "ok hi"])
+        ok.invoke(name: "Test2", data: ["ye": "wat"])
     }
     
     func startCheckingLocation() {
@@ -53,7 +71,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, CLLocationManagerDelegat
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let newLocation = locations.last!
-        print(newLocation)
+        //print(newLocation)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

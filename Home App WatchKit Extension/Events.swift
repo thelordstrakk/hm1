@@ -12,7 +12,7 @@ import Foundation
 class Trigger {
     //var callbacks: Dictionary<AnyHashable, String>!
     var callbacks: [((String, [AnyHashable: AnyHashable])->Void)] = []
-    func on(name: String, callback: @escaping ([AnyHashable: AnyHashable]) -> Void) {
+    func on(name: String, callback: @escaping (_ data: [AnyHashable: AnyHashable]) -> Void) {
         //self.callbacks[callback]: name
         //self.callbacks
         //callbacks[callback] = "ok"

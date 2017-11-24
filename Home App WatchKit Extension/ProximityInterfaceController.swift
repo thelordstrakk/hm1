@@ -12,8 +12,8 @@ import UIKit
 
 class ProximityInterfaceController: WKInterfaceController {
     
-    @IBOutlet var LatitudeLabel: WKInterfaceLabel!
-    @IBOutlet var LongitudeLabel: WKInterfaceLabel!
+    //@IBOutlet var LatitudeLabel: WKInterfaceLabel!
+    //@IBOutlet var LongitudeLabel: WKInterfaceLabel!
     
     //let ok = Trigger()
 
@@ -22,7 +22,7 @@ class ProximityInterfaceController: WKInterfaceController {
         
         // Configure interface objects here.
         
-        presentController(withNames: ["Menu", "Proximity"], contexts: ["hi","hi"])
+        //presentController(withNames: ["Menu", "Proximity"], contexts: ["hi","hi"])
         
     }
 

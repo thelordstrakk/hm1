@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13770" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc" pageOrientation="vertical">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13770" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,7 +14,7 @@
             <objects>
                 <controller identifier="MainMenu" title="Menu" animationDuration="1" hidesWhenLoading="NO" alwaysBounce="YES" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Home_App_WatchKit_Extension">
                     <items>
-                        <group width="1" height="1" alignment="left" id="BeW-Za-MC4"/>
+                        <group width="1" height="1" alignment="left" layout="vertical" id="BeW-Za-MC4"/>
                     </items>
                     <connections>
                         <segue destination="YU2-9w-4st" kind="relationship" relationship="nextPage" id="KwT-US-0H9"/>
