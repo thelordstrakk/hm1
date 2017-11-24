@@ -8,6 +8,8 @@
 
 import WatchKit
 import CoreLocation
+import UIKit
+import Foundation
 
 struct _G {
     static var delegate: ExtensionDelegate?
@@ -24,6 +26,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, CLLocationManagerDelegat
         //self.startCheckingLocation()
         //let self.locationManager = _G.manager
         _G.delegate = self
+        
         DispatchQueue.main.async {
             _G.locationManager = CLLocationManager()
             self.startCheckingLocation()
@@ -59,6 +62,10 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, CLLocationManagerDelegat
     func applicationDidBecomeActive() {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         //self.startCheckingLocation()
+        //presentController(withNames: ["Menu", "Proximity"], contexts: [false, false])
+        //presentController(withNames: ["MainMenu", "ProximityMenu"], contexts: ["hi", "hi"])
+        
+        
     }
 
     func applicationWillResignActive() {

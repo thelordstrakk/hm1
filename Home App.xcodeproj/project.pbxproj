@@ -23,6 +23,7 @@
 		8003ECC91FC88C73002F5A29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8003ECC81FC88C72002F5A29 /* Assets.xcassets */; };
 		8003ECE51FC89283002F5A29 /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8003ECE41FC89283002F5A29 /* HomeKit.framework */; };
 		8003ECE81FC8929D002F5A29 /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8003ECE71FC8929D002F5A29 /* HomeKit.framework */; };
+		80DB95A61FC8B5C900C9D5BF /* ProximityInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DB95A51FC8B5C900C9D5BF /* ProximityInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		8003ECE41FC89283002F5A29 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
 		8003ECE61FC8928C002F5A29 /* Home App WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Home App WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		8003ECE71FC8929D002F5A29 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.2.sdk/System/Library/Frameworks/HomeKit.framework; sourceTree = DEVELOPER_DIR; };
+		80DB95A51FC8B5C900C9D5BF /* ProximityInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProximityInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,8 +163,10 @@
 		8003ECBF1FC88C72002F5A29 /* Home App WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				8003ECE61FC8928C002F5A29 /* Home App WatchKit Extension.entitlements */,
+				80DB95A51FC8B5C900C9D5BF /* ProximityInterfaceController.swift */,
 				8003ECC01FC88C72002F5A29 /* InterfaceController.swift */,
+				80DB95A41FC8B5AA00C9D5BF /* Interface Controllers */,
+				8003ECE61FC8928C002F5A29 /* Home App WatchKit Extension.entitlements */,
 				8003ECC21FC88C72002F5A29 /* ExtensionDelegate.swift */,
 				8003ECC41FC88C72002F5A29 /* NotificationController.swift */,
 				8003ECC61FC88C72002F5A29 /* ComplicationController.swift */,
@@ -180,6 +184,13 @@
 				8003ECE41FC89283002F5A29 /* HomeKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		80DB95A41FC8B5AA00C9D5BF /* Interface Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Interface Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,6 +392,7 @@
 				8003ECC51FC88C72002F5A29 /* NotificationController.swift in Sources */,
 				8003ECC71FC88C72002F5A29 /* ComplicationController.swift in Sources */,
 				8003ECC31FC88C72002F5A29 /* ExtensionDelegate.swift in Sources */,
+				80DB95A61FC8B5C900C9D5BF /* ProximityInterfaceController.swift in Sources */,
 				8003ECC11FC88C72002F5A29 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

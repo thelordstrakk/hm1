@@ -1,5 +1,5 @@
 //
-//  InterfaceController.swift
+//  ProximityInterfaceController.swift
 //  Home App WatchKit Extension
 //
 //  Created by Chris Seitz on 11/24/17.
@@ -10,26 +10,24 @@ import WatchKit
 import Foundation
 import UIKit
 
-class InterfaceController: WKInterfaceController {
+class ProximityInterfaceController: WKInterfaceController {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         // Configure interface objects here.
-        presentController(withNames: ["Menu", "Proximity"], contexts: ["hi","hi"])
-        //let controllers = ["Menu", "Proximity"]
         
-        //presentController(withNames: controllers, contexts: [false, false])
+        presentController(withNames: ["Menu", "Proximity"], contexts: ["hi","hi"])
         
     }
-    
+
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         //presentController(withNames: ["MainMenu", "ProximityMenu"], contexts: ["hi", "hi"])
         
     }
-    
+
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
