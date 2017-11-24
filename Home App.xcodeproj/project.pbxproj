@@ -21,6 +21,8 @@
 		8003ECC51FC88C72002F5A29 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8003ECC41FC88C72002F5A29 /* NotificationController.swift */; };
 		8003ECC71FC88C72002F5A29 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8003ECC61FC88C72002F5A29 /* ComplicationController.swift */; };
 		8003ECC91FC88C73002F5A29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8003ECC81FC88C72002F5A29 /* Assets.xcassets */; };
+		8003ECE51FC89283002F5A29 /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8003ECE41FC89283002F5A29 /* HomeKit.framework */; };
+		8003ECE81FC8929D002F5A29 /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8003ECE71FC8929D002F5A29 /* HomeKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,10 @@
 		8003ECC81FC88C72002F5A29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8003ECCA1FC88C73002F5A29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8003ECCB1FC88C73002F5A29 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		8003ECE21FC89263002F5A29 /* Home App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Home App.entitlements"; sourceTree = "<group>"; };
+		8003ECE41FC89283002F5A29 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
+		8003ECE61FC8928C002F5A29 /* Home App WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Home App WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		8003ECE71FC8929D002F5A29 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.2.sdk/System/Library/Frameworks/HomeKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8003ECE51FC89283002F5A29 /* HomeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8003ECE81FC8929D002F5A29 /* HomeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +120,7 @@
 				8003ECB01FC88C72002F5A29 /* Home App WatchKit App */,
 				8003ECBF1FC88C72002F5A29 /* Home App WatchKit Extension */,
 				8003EC9B1FC88C72002F5A29 /* Products */,
+				8003ECE31FC89283002F5A29 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +137,7 @@
 		8003EC9C1FC88C72002F5A29 /* Home App */ = {
 			isa = PBXGroup;
 			children = (
+				8003ECE21FC89263002F5A29 /* Home App.entitlements */,
 				8003EC9D1FC88C72002F5A29 /* AppDelegate.swift */,
 				8003EC9F1FC88C72002F5A29 /* ViewController.swift */,
 				8003ECA11FC88C72002F5A29 /* Main.storyboard */,
@@ -151,6 +161,7 @@
 		8003ECBF1FC88C72002F5A29 /* Home App WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				8003ECE61FC8928C002F5A29 /* Home App WatchKit Extension.entitlements */,
 				8003ECC01FC88C72002F5A29 /* InterfaceController.swift */,
 				8003ECC21FC88C72002F5A29 /* ExtensionDelegate.swift */,
 				8003ECC41FC88C72002F5A29 /* NotificationController.swift */,
@@ -160,6 +171,15 @@
 				8003ECCB1FC88C73002F5A29 /* PushNotificationPayload.apns */,
 			);
 			path = "Home App WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		8003ECE31FC89283002F5A29 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8003ECE71FC8929D002F5A29 /* HomeKit.framework */,
+				8003ECE41FC89283002F5A29 /* HomeKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +251,35 @@
 					8003EC991FC88C72002F5A29 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.DataProtection = {
+								enabled = 1;
+							};
+							com.apple.HomeKit = {
+								enabled = 1;
+							};
+							com.apple.Multipath = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+							com.apple.Siri = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					8003ECAB1FC88C72002F5A29 = {
 						CreatedOnToolsVersion = 9.2;
@@ -239,6 +288,29 @@
 					8003ECBA1FC88C72002F5A29 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.BackgroundModes.watchos.extension = {
+								enabled = 1;
+							};
+							com.apple.DataProtection = {
+								enabled = 1;
+							};
+							com.apple.HomeKit = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.Siri = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -467,6 +539,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Home App WatchKit Extension/Home App WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Z9XZ4B87H;
 				INFOPLIST_FILE = "Home App WatchKit Extension/Info.plist";
@@ -485,6 +558,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Home App WatchKit Extension/Home App WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Z9XZ4B87H;
 				INFOPLIST_FILE = "Home App WatchKit Extension/Info.plist";
@@ -541,6 +615,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Home App/Home App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Z9XZ4B87H;
 				INFOPLIST_FILE = "Home App/Info.plist";
@@ -556,6 +631,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Home App/Home App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Z9XZ4B87H;
 				INFOPLIST_FILE = "Home App/Info.plist";
