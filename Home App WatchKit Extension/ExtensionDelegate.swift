@@ -20,6 +20,8 @@ struct _G {
 class ExtensionDelegate: NSObject, WKExtensionDelegate, CLLocationManagerDelegate {
     
     //let locationManager = _G.locationManager
+    
+    let locationTrigger = Trigger()
 
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
@@ -58,8 +60,12 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, CLLocationManagerDelegat
             return
         }
         
+        //self.locationTrigger = Trigger()
+        
+        
         let authStatus = CLLocationManager.authorizationStatus()
         if (authStatus == .authorizedAlways) {
+            //_locationTrigger = Trigger()
             _G.locationManager?.delegate = self
             _G.locationManager?.desiredAccuracy = kCLLocationAccuracyBest
             _G.locationManager?.startUpdatingLocation()
@@ -71,6 +77,9 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, CLLocationManagerDelegat
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let newLocation = locations.last!
+        let lat = String(newLocation.coordinate.latitude)
+        let long = String(newLocation.coordinate.longitude)
+        locationTrigger.invoke(name: "LocationUpdated", data: ["location": newLocation, "lat": lat, "long": long])
         //print(newLocation)
     }
     
