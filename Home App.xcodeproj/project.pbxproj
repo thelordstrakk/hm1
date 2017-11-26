@@ -23,6 +23,8 @@
 		8003ECC91FC88C73002F5A29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8003ECC81FC88C72002F5A29 /* Assets.xcassets */; };
 		8003ECE51FC89283002F5A29 /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8003ECE41FC89283002F5A29 /* HomeKit.framework */; };
 		8003ECE81FC8929D002F5A29 /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8003ECE71FC8929D002F5A29 /* HomeKit.framework */; };
+		8043AA521FCA2E2400001C92 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8043AA511FCA2E2400001C92 /* UIKit.framework */; };
+		8043AA581FCA2E4000001C92 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8043AA571FCA2E4000001C92 /* UIKit.framework */; };
 		80DB95A61FC8B5C900C9D5BF /* ProximityInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DB95A51FC8B5C900C9D5BF /* ProximityInterfaceController.swift */; };
 		80DB95A81FC8C86D00C9D5BF /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DB95A71FC8C86D00C9D5BF /* Events.swift */; };
 /* End PBXBuildFile section */
@@ -93,6 +95,8 @@
 		8003ECE41FC89283002F5A29 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
 		8003ECE61FC8928C002F5A29 /* Home App WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Home App WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		8003ECE71FC8929D002F5A29 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.2.sdk/System/Library/Frameworks/HomeKit.framework; sourceTree = DEVELOPER_DIR; };
+		8043AA511FCA2E2400001C92 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		8043AA571FCA2E4000001C92 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		80DB95A51FC8B5C900C9D5BF /* ProximityInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProximityInterfaceController.swift; sourceTree = "<group>"; };
 		80DB95A71FC8C86D00C9D5BF /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8043AA581FCA2E4000001C92 /* UIKit.framework in Frameworks */,
 				8003ECE51FC89283002F5A29 /* HomeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,7 +115,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8043AA521FCA2E2400001C92 /* UIKit.framework in Frameworks */,
 				8003ECE81FC8929D002F5A29 /* HomeKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8043AA551FCA2E2D00001C92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +196,8 @@
 		8003ECE31FC89283002F5A29 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8043AA511FCA2E2400001C92 /* UIKit.framework */,
+				8043AA571FCA2E4000001C92 /* UIKit.framework */,
 				8003ECE71FC8929D002F5A29 /* HomeKit.framework */,
 				8003ECE41FC89283002F5A29 /* HomeKit.framework */,
 			);
@@ -224,6 +239,7 @@
 			buildPhases = (
 				8003ECAA1FC88C72002F5A29 /* Resources */,
 				8003ECD11FC88C73002F5A29 /* Embed App Extensions */,
+				8043AA551FCA2E2D00001C92 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -598,6 +614,7 @@
 				DEVELOPMENT_TEAM = 5Z9XZ4B87H;
 				IBSC_MODULE = Home_App_WatchKit_Extension;
 				INFOPLIST_FILE = "Home App WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ChrisDSeitzApps.Home-App.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -617,6 +634,7 @@
 				DEVELOPMENT_TEAM = 5Z9XZ4B87H;
 				IBSC_MODULE = Home_App_WatchKit_Extension;
 				INFOPLIST_FILE = "Home App WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ChrisDSeitzApps.Home-App.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;

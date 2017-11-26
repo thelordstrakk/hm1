@@ -14,9 +14,14 @@
             <objects>
                 <controller identifier="MainMenu" title="Menu" animationDuration="1" hidesWhenLoading="NO" alwaysBounce="YES" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Home_App_WatchKit_Extension">
                     <items>
-                        <group width="1" height="1" alignment="left" layout="vertical" id="BeW-Za-MC4"/>
+                        <group width="1" height="1" alignment="left" backgroundImage="IconBackground" layout="vertical" id="BeW-Za-MC4">
+                            <items>
+                                <group width="1" height="1" alignment="left" alpha="0.25" backgroundImage="BlackBackground" id="94w-cr-Fyd"/>
+                            </items>
+                        </group>
                     </items>
                     <connections>
+                        <outlet property="BackgroundBlur" destination="BeW-Za-MC4" id="8Vc-pN-Wx5"/>
                         <segue destination="YU2-9w-4st" kind="relationship" relationship="nextPage" id="KwT-US-0H9"/>
                     </connections>
                 </controller>
@@ -28,16 +33,21 @@
             <objects>
                 <controller identifier="ProximityMenu" title="Proximity" animationDuration="1" hidesWhenLoading="NO" alwaysBounce="YES" id="YU2-9w-4st" customClass="ProximityInterfaceController" customModule="Home_App_WatchKit_Extension">
                     <items>
-                        <group width="1" height="1" alignment="left" layout="vertical" id="ytQ-pT-4ft">
+                        <group width="1" height="1" alignment="left" backgroundImage="IconBackground" layout="overlap" id="ytQ-pT-4ft">
                             <items>
-                                <group width="1" alignment="left" id="0Mc-ZU-vwr">
+                                <group width="1" height="1" alignment="left" alpha="0.25" backgroundImage="BlackBackground" layout="vertical" id="0Pt-cy-Dsc"/>
+                                <group width="1" alignment="left" layout="vertical" id="vsa-GM-0Ok">
                                     <items>
-                                        <label alignment="left" text="Latitude" id="UZr-Uy-Q06"/>
-                                    </items>
-                                </group>
-                                <group width="1" alignment="left" id="1cX-L7-pIZ">
-                                    <items>
-                                        <label alignment="left" text="Longitude" id="p7c-qS-xej"/>
+                                        <group width="1" alignment="left" id="0Mc-ZU-vwr">
+                                            <items>
+                                                <label alignment="left" text="Latitude" id="UZr-Uy-Q06"/>
+                                            </items>
+                                        </group>
+                                        <group width="1" alignment="left" id="1cX-L7-pIZ">
+                                            <items>
+                                                <label alignment="left" text="Longitude" id="p7c-qS-xej"/>
+                                            </items>
+                                        </group>
                                     </items>
                                 </group>
                             </items>
@@ -51,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="468" y="345"/>
         </scene>
-        <!--Static Notification Interface Controller-->
+        <!--IconBackground-->
         <scene sceneID="AEw-b0-oYE">
             <objects>
-                <notificationController id="YCC-NB-fut">
+                <notificationController backgroundImage="IconBackground" contentMode="center" id="YCC-NB-fut">
                     <items>
                         <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
                     </items>
@@ -67,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="220" y="643"/>
         </scene>
-        <!--Notification Controller-->
+        <!--IconBackground-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Home_App_WatchKit_App" customModuleProvider="target"/>
+                <controller backgroundImage="IconBackground" contentMode="center" id="4sK-HA-Art" customClass="NotificationController" customModule="Home_App_WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>

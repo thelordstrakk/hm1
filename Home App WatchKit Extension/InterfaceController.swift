@@ -11,6 +11,8 @@ import Foundation
 import UIKit
 
 class InterfaceController: WKInterfaceController {
+    
+    @IBOutlet var BackgroundBlur: WKInterfaceGroup!
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -20,6 +22,9 @@ class InterfaceController: WKInterfaceController {
         //let controllers = ["Menu", "Proximity"]
         
         //presentController(withNames: controllers, contexts: [false, false])
+        
+        //let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        
         
     }
     
