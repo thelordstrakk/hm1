@@ -48,6 +48,16 @@
                                                 <label alignment="left" text="Longitude" id="p7c-qS-xej"/>
                                             </items>
                                         </group>
+                                        <group width="1" alignment="left" id="gh8-sB-23Z">
+                                            <items>
+                                                <switch width="1" alignment="left" title="Paused" id="bqj-Ug-gvY"/>
+                                            </items>
+                                        </group>
+                                        <group width="1" alignment="left" id="ysK-rk-cuV">
+                                            <items>
+                                                <timer alignment="left" id="40o-fg-jO0"/>
+                                            </items>
+                                        </group>
                                     </items>
                                 </group>
                             </items>
@@ -56,6 +66,8 @@
                     <connections>
                         <outlet property="LatitudeLabel" destination="UZr-Uy-Q06" id="6B3-L9-9C1"/>
                         <outlet property="LongitudeLabel" destination="p7c-qS-xej" id="mOJ-Rb-GUC"/>
+                        <outlet property="PauseSwitch" destination="bqj-Ug-gvY" id="Hlx-lX-vp1"/>
+                        <outlet property="TimeSinceLabel" destination="40o-fg-jO0" id="Wia-Hf-E01"/>
                     </connections>
                 </controller>
             </objects>
